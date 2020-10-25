@@ -12,7 +12,14 @@ module RN
         ]
 
         def call(name:, **)
-          warn "TODO: Implementar creación del cuaderno de notas con nombre '#{name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          array = Dir.glob("{*,.*}")
+          array2 = array.select {|element| element == ".my_rns"}
+          if(array2.count == 0)
+            Dir.mkdir(".my_rns")
+          end
+          Dir.chdir("/home/#{ENV["USER"]}/.my_rns")
+          Dir.mkdir(name)
         end
       end
 
