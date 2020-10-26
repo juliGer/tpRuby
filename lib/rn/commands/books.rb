@@ -63,7 +63,10 @@ module RN
         ]
 
         def call(*)
-          warn "TODO: Implementar listado de los cuadernos de notas.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}/.my_rns")
+          array = Dir.glob("{*}")
+          puts "Libros guardados:"
+          puts array
         end
       end
 
