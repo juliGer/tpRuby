@@ -13,10 +13,10 @@ module RN
 
         def call(name:, **)
           Dir.chdir("/home/#{ENV["USER"]}")
-          array = Dir.glob("{*,.*}")
-          array2 = array.select {|element| element == ".my_rns"}
-          if(array2.count == 0)
+          if(!Dir.exists? ".my_rns")
             Dir.mkdir(".my_rns")
+            Dir.chdir(".my_rns")  
+            Dir.mkdir("cuaderno_global")
           end
           Dir.chdir("/home/#{ENV["USER"]}/.my_rns")
           Dir.mkdir(name)
@@ -37,7 +37,21 @@ module RN
 
         def call(name: nil, **options)
           global = options[:global]
-          warn "TODO: Implementar borrado del cuaderno de notas con nombre '#{name}' (global=#{global}).\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if global 
+              FileUtils.rm_rf(Dir.glob('cuaderno_global/*'))
+            else
+              if(Dir.exists? name)
+                FileUtils.remove_dir(name)
+              else
+                puts "No existe el libro que ingresó"
+              end
+            end
+          end
         end
       end
 
