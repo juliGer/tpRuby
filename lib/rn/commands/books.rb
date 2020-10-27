@@ -83,7 +83,17 @@ module RN
         ]
 
         def call(old_name:, new_name:, **)
-          warn "TODO: Implementar renombrado del cuaderno de notas con nombre '#{old_name}' para que pase a llamarse '#{new_name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if(Dir.exists? old_name)
+              File.rename(old_name, new_name)
+            else
+              puts "No existe el nombre del libro "
+            end
+          end
         end
       end
     end
