@@ -15,7 +15,23 @@ module RN
 
         def call(title:, **options)
           book = options[:book]
-          warn "TODO: Implementar creación de la nota con título '#{title}' (en el libro '#{book}').\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if book
+              if(Dir.exists? book)
+                Dir.chdir(book)
+                File.open(title, "w")
+              else
+                puts "No existe el libro que envió como parametro debe crearlo"
+              end
+            else
+              Dir.chdir("cuaderno_global")
+              File.open(title, "w")              
+            end
+          end
         end
       end
 
