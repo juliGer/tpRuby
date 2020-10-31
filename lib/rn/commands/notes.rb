@@ -55,9 +55,12 @@ module RN
           else
             Dir.chdir(".my_rns")
             if book
-              if(Dir.exists? title)
-                Dir.chdir(title)
-                File.delete(book)
+              if(Dir.exists? book)
+                Dir.chdir(book)
+                if(Dir.exists? title)
+                  File.delete(title)
+                else
+                  puts "No existe la nota que envio en el libro que envio"
               else
                 puts "No existe el libro que envió como parametro debe crearlo"
               end
@@ -70,6 +73,8 @@ module RN
       end
 
       class Edit < Dry::CLI::Command
+        require 'tty-editor'
+
         desc 'Edit the content a note'
 
         argument :title, required: true, desc: 'Title of the note'
@@ -83,7 +88,26 @@ module RN
 
         def call(title:, **options)
           book = options[:book]
-          warn "TODO: Implementar modificación de la nota con título '#{title}' (del libro '#{book}').\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if book
+              if(Dir.exists? book)
+                Dir.chdir(book)
+                if(Dir.exists? title)
+                  system("#{ENV['EDITOR']}",title)
+                else
+                  "No existe la nota que envio en el libro que envio"
+              else
+                puts "No existe el libro que envió como parametro debe crearlo"
+              end
+            else
+              Dir.chdir("cuaderno_global")
+              system("#{ENV['EDITOR']}",title)
+            end
+          end
         end
       end
 
