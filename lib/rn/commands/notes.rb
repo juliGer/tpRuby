@@ -61,6 +61,7 @@ module RN
                   File.delete(title)
                 else
                   puts "No existe la nota que envio en el libro que envio"
+                end
               else
                 puts "No existe el libro que envió como parametro debe crearlo"
               end
@@ -96,16 +97,21 @@ module RN
             if book
               if(Dir.exists? book)
                 Dir.chdir(book)
-                if(Dir.exists? title)
-                  system("#{ENV['EDITOR']}",title)
+                if(File.exists? title)
+                  TTY::Editor.open("#{title}")
                 else
                   "No existe la nota que envio en el libro que envio"
+                end
               else
                 puts "No existe el libro que envió como parametro debe crearlo"
               end
             else
               Dir.chdir("cuaderno_global")
-              system("#{ENV['EDITOR']}",title)
+              if(File.exists? title)
+                TTY::Editor.open("#{title}")
+              else
+                "No existe la nota que envio en el libro que envio"
+              end
             end
           end
         end
@@ -126,7 +132,31 @@ module RN
 
         def call(old_title:, new_title:, **options)
           book = options[:book]
-          warn "TODO: Implementar cambio del título de la nota con título '#{old_title}' hacia '#{new_title}' (del libro '#{book}').\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if book
+              if(Dir.exists? book)
+                Dir.chdir(book)
+                if(File.exists? old_title)
+                  File.rename(old_title, new_title)
+                else
+                  "No existe la nota que envio en el libro que envio"
+                end
+              else
+                puts "No existe el libro que envió como parametro debe crearlo"
+              end
+            else
+              Dir.chdir("cuaderno_global")
+              if(File.exists? old_title)
+                File.rename(old_title, new_title)
+              else
+                "No existe la nota que envio en el libro que envio"
+              end
+            end
+          end
         end
       end
 
@@ -146,7 +176,23 @@ module RN
         def call(**options)
           book = options[:book]
           global = options[:global]
-          warn "TODO: Implementar listado de las notas del libro '#{book}' (global=#{global}).\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if book
+              if(Dir.exists? book)
+                Dir.chdir(book)
+                system("ls")
+              else
+                puts "No existe el libro que envió como parametro debe crearlo"
+              end
+            else
+              Dir.chdir("cuaderno_global")
+              system("ls")
+            end
+          end
         end
       end
 
@@ -164,7 +210,31 @@ module RN
 
         def call(title:, **options)
           book = options[:book]
-          warn "TODO: Implementar vista de la nota con título '#{title}' (del libro '#{book}').\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          Dir.chdir("/home/#{ENV["USER"]}")
+          if(!Dir.exists? ".my_rns")
+            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+          else
+            Dir.chdir(".my_rns")
+            if book
+              if(Dir.exists? book)
+                Dir.chdir(book)
+                if(File.exists? title)
+                  puts File.read(title)
+                else
+                  "No existe la nota que envio en el libro que envio"
+                end
+              else
+                puts "No existe el libro que envió como parametro debe crearlo"
+              end
+            else
+              Dir.chdir("cuaderno_global")
+              if(File.exists? title)
+                puts File.read(title)
+              else
+                "No existe la nota que envio en el libro que envio"
+              end
+            end
+          end
         end
       end
     end

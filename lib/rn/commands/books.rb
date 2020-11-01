@@ -64,9 +64,7 @@ module RN
 
         def call(*)
           Dir.chdir("/home/#{ENV["USER"]}/.my_rns")
-          array = Dir.glob("{*}")
-          puts "Libros guardados:"
-          puts array
+          system("ls")
         end
       end
 
