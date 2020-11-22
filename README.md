@@ -7,13 +7,17 @@ A la hora de crear un cuaderno si no existe la carpeta .my_rns se crea dicha car
 ## Instalación
 Se debe ejecutar el siguiente comando posicionado en /rubyTP-1
 ```
-$ bundle install
+bundle install
 ```
 
 ## Uso 
+La primera vez se debe ejecutar el siguiente comando posicionado en /rubyTP-1 y cada vez que se cierre la consola tambien
 ```
-$ export PATH="$(pwd)/bin:$PATH"
-$ rn [args]
+export PATH="$(pwd)/bin:$PATH"
+```
+Una vez hecho eso a la hora de usarlo, posicionado en /rubyTP-1 ejecutar el siguiente comando para poder utilizar el programa
+```
+rn [args]
 ```
 
 ## Aclaración
