@@ -1,8 +1,10 @@
+require_relative "../clases/notes.rb"
+N=Note.new
+
 module RN
   module Commands
     module Notes
       class Create < Dry::CLI::Command
-        require 'tty-editor'
         desc 'Create a note'
 
         argument :title, required: true, desc: 'Title of the note'
@@ -15,37 +17,7 @@ module RN
         ]
 
         def call(title:, **options)
-          book = options[:book]
-          Dir.chdir("/home/#{ENV["USER"]}")
-          title=title.delete("/")
-          if(!Dir.exists? ".my_rns")
-            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
-          else
-            Dir.chdir(".my_rns")
-            if book
-              if(Dir.exists? book)
-                Dir.chdir(book)
-                if(File.exists? title)
-                  puts "La nota ya existe en #{Dir.pwd}"
-                else
-                  File.open(title, "w")
-                  TTY::Editor.open("#{title}")
-                  puts "La nota fue creada en #{Dir.pwd}"
-                end
-              else
-                puts "No existe el libro que envió como parametro debe crearlo"
-              end
-            else
-              Dir.chdir("cuaderno_global")
-              if(File.exists? title)
-                puts "La nota ya existe en #{Dir.pwd}"
-              else
-                File.open(title, "w")
-                TTY::Editor.open("#{title}")
-                puts "La nota fue creada en #{Dir.pwd}"
-              end
-            end
-          end
+          N.create(title,**options)
         end
       end
 
@@ -62,34 +34,7 @@ module RN
         ]
 
         def call(title:, **options)
-          book = options[:book]
-          Dir.chdir("/home/#{ENV["USER"]}")
-          if(!Dir.exists? ".my_rns")
-            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
-          else
-            Dir.chdir(".my_rns")
-            if book
-              if(Dir.exists? book)
-                Dir.chdir(book)
-                if(File.exists? title)
-                  File.delete(title)
-                  puts "Se eliminó la nota #{title} en el libro #{book}"
-                else
-                  puts "No existe el nombre de la nota "
-                end
-              else
-                puts "No existe el libro que envió como parametro debe crearlo"
-              end
-            else
-              Dir.chdir("cuaderno_global")
-              if(File.exists? title)
-                File.delete(title)
-                puts "Se eliminó la nota #{title} en cuaderno_global"
-              else
-                puts "No existe el nombre de la nota en el cuaderno_global"
-              end
-            end
-          end
+          N.delete(title,**options)
         end
       end
 
@@ -108,32 +53,7 @@ module RN
         ]
 
         def call(title:, **options)
-          book = options[:book]
-          Dir.chdir("/home/#{ENV["USER"]}")
-          if(!Dir.exists? ".my_rns")
-            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
-          else
-            Dir.chdir(".my_rns")
-            if book
-              if(Dir.exists? book)
-                Dir.chdir(book)
-                if(File.exists? title)
-                  TTY::Editor.open("#{title}")
-                else
-                  puts "No existe el nombre de la nota #{title} en el libro #{book}"
-                end
-              else
-                puts "No existe el libro que envió como parametro debe crearlo"
-              end
-            else
-              Dir.chdir("cuaderno_global")
-              if(File.exists? title)
-                TTY::Editor.open("#{title}")
-              else
-                puts "No existe el nombre de la nota en el cuaderno_global"
-              end
-            end
-          end
+          N.edit(title,**options)
         end
       end
 
@@ -151,32 +71,7 @@ module RN
         ]
 
         def call(old_title:, new_title:, **options)
-          book = options[:book]
-          Dir.chdir("/home/#{ENV["USER"]}")
-          if(!Dir.exists? ".my_rns")
-            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
-          else
-            Dir.chdir(".my_rns")
-            if book
-              if(Dir.exists? book)
-                Dir.chdir(book)
-                if(File.exists? old_title)
-                  File.rename(old_title, new_title)
-                else
-                  puts "No existe el nombre de la nota #{title} en el libro #{book}"
-                end
-              else
-                puts "No existe el libro que envió como parametro debe crearlo"
-              end
-            else
-              Dir.chdir("cuaderno_global")
-              if(File.exists? old_title)
-                File.rename(old_title, new_title)
-              else
-                puts "No existe el nombre de la nota en el cuaderno_global"
-              end
-            end
-          end
+          N.retitle(old_title,new_title,**options)
         end
       end
 
@@ -194,25 +89,7 @@ module RN
         ]
 
         def call(**options)
-          book = options[:book]
-          global = options[:global]
-          Dir.chdir("/home/#{ENV["USER"]}")
-          if(!Dir.exists? ".my_rns")
-            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
-          else
-            Dir.chdir(".my_rns")
-            if book
-              if(Dir.exists? book)
-                Dir.chdir(book)
-                system("ls")
-              else
-                puts "No existe el libro que envió como parametro debe crearlo"
-              end
-            else
-              Dir.chdir("cuaderno_global")
-              system("ls")
-            end
-          end
+          N.list(**options)
         end
       end
 
@@ -229,32 +106,7 @@ module RN
         ]
 
         def call(title:, **options)
-          book = options[:book]
-          Dir.chdir("/home/#{ENV["USER"]}")
-          if(!Dir.exists? ".my_rns")
-            puts "No existe la carpeta .my_rns, debe crearla y crear un book"
-          else
-            Dir.chdir(".my_rns")
-            if book
-              if(Dir.exists? book)
-                Dir.chdir(book)
-                if(File.exists? title)
-                  puts File.read(title)
-                else
-                  puts "No existe el nombre de la nota #{title} en el libro #{book}"
-                end
-              else
-                puts "No existe el libro que envió como parametro debe crearlo"
-              end
-            else
-              Dir.chdir("cuaderno_global")
-              if(File.exists? title)
-                puts File.read(title)
-              else
-                puts "No existe el nombre de la nota en el cuaderno_global"
-              end
-            end
-          end
+          N.show(title,**options)
         end
       end
     end

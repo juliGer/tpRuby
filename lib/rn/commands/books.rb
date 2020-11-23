@@ -1,5 +1,6 @@
-require_relative "../modules/books.rb"
-include Book
+require_relative "../clases/books.rb"
+A=Book.new
+
 module RN
   module Commands
     module Books
@@ -14,7 +15,7 @@ module RN
         ]
 
         def call(name:, **)
-          create(name)
+          A.create(name)
         end
       end
 
@@ -31,7 +32,7 @@ module RN
         ]
 
         def call(name: nil, **options)
-          delete(name,**options)
+          A.delete(name,**options)
         end
       end
 

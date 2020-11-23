@@ -1,4 +1,4 @@
-module Book
+class Book
     def create(name)
         Dir.chdir("/home/#{ENV["USER"]}")
         name=name.delete("/")
