@@ -35,4 +35,4 @@ Select an editor?
   Choose 1-4 [1]: 
 ```
 
-**Fuente:** https://github.com/piotrmurach/tty-editor
+[fuente](https://github.com/piotrmurach/tty-editor)
