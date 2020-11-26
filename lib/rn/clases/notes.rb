@@ -1,7 +1,8 @@
 require 'tty-editor'
-require 'github/markup'
+require_relative '../modules/exportHtml.rb'
 
 class Note
+    include ExportHtml
     def create(title,**options)
         book = options[:book]
         if !title.include? ".rn"
@@ -195,21 +196,43 @@ class Note
     end
 
     def export(title,**options)
-      Dir.chdir("/home/#{ENV["USER"]}/.my_rns/libro1")
-      titleMd="#{title}"
-      titleMd.slice! ".rn"
-      titleRn=titleMd
-      titleMd=titleRn+".md"
-      File.open(titleMd,"w")
-      rn=File.read(title)
-      File.open(titleMd,"w") do |f|
-        f.puts rn
+      book = options[:book]
+      if title
+        if !title.include? ".rn"
+          title = title+".rn"
+        end
       end
-      IO.copy_stream(title,titleMd)
-      file = GitHub::Markup.render(titleMd, File.read(titleMd))
-      File.open(titleMd,"w") do |f|
-        f.puts file
+      Dir.chdir("/home/#{ENV["USER"]}")
+      if(!Dir.exists? ".my_rns")
+        puts "No existe la carpeta .my_rns, debe crearla y crear un book"
+      else
+        Dir.chdir(".my_rns")
+        if book
+          if(Dir.exists? book)
+            Dir.chdir(book)
+            if title
+              if(File.exists? title)
+                exportHtml(title)
+              else
+                puts "No existe el nombre de la nota #{title} en el libro #{book}"
+              end
+            else
+              exportDirectoryHtml()
+            end
+          else
+            puts "No existe el libro que envió como parametro debe crearlo"
+          end
+        else 
+          if title
+            if(File.exists? title)
+              exportHtml(title)
+            else
+              puts "No existe el nombre de la nota #{title} en el libro #{book}"
+            end
+          else
+            exportAll()
+          end
+        end
       end
-      File.rename(titleMd,titleRn+".html")
     end
 end

@@ -114,12 +114,13 @@ module RN
       class Export < Dry::CLI::Command
         desc 'Export a note'
 
-        argument :title, required: true, desc: 'Title of the note'
+        argument :title, desc: 'Title of the note'
         option :book, type: :string, desc: 'Book'
 
         example [
-          'todo                        # Export a note titled "todo" from the global book',
           '"New note" --book "My book" # Export a note titled "New note" from the book "My book"',
+          '           --book "my book" # Export all notes from the book my book ',
+          'todo                        # Export a note titled "todo" from the global book',
           '                            # Export all notes'
         ]
 
