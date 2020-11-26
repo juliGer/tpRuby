@@ -7,3 +7,5 @@ gem 'dry-cli', '~> 0.6'
 gem 'tty-editor'
 
 gem 'github-markup'
+
+gem 'github-markdown'
