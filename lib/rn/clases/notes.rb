@@ -1,5 +1,6 @@
 require 'tty-editor'
 
+
 class Note
     def create(title,**options)
         book = options[:book]
@@ -191,5 +192,19 @@ class Note
             end
           end
         end
+    end
+
+    def export(title,**options)
+      Dir.chdir("/home/#{ENV["USER"]}/.my_rns/libro1")
+      titleMd="#{title}"
+      titleRn=titleMd.slice! ".rn"
+      titleMd=titleRn+".md"
+      File.open(titleMd,"w")
+      IO.copy_stream(title,titleMd)
+      file = GitHub::Markup.render(titleMd, File.read(titleMd))
+      File.open(titleMd,"w") do |f|
+        f.puts file
+      end
+      File.rename(titleMd,titleRn+".html")
     end
 end
