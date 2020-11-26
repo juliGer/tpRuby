@@ -1,5 +1,5 @@
 require 'tty-editor'
-
+require 'github/markup'
 
 class Note
     def create(title,**options)
@@ -197,9 +197,14 @@ class Note
     def export(title,**options)
       Dir.chdir("/home/#{ENV["USER"]}/.my_rns/libro1")
       titleMd="#{title}"
-      titleRn=titleMd.slice! ".rn"
+      titleMd.slice! ".rn"
+      titleRn=titleMd
       titleMd=titleRn+".md"
       File.open(titleMd,"w")
+      rn=File.read(title)
+      File.open(titleMd,"w") do |f|
+        f.puts rn
+      end
       IO.copy_stream(title,titleMd)
       file = GitHub::Markup.render(titleMd, File.read(titleMd))
       File.open(titleMd,"w") do |f|

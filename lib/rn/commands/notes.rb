@@ -1,4 +1,5 @@
 require_relative "../clases/notes.rb"
+require 'github/markup'
 N=Note.new
 
 module RN
