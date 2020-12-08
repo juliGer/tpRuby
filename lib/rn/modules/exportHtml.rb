@@ -2,7 +2,6 @@ require 'github/markup'
 
 module ExportHtml
     def exportHtml(title)
-        Dir.chdir("/home/#{ENV["USER"]}/.my_rns/libro1")
         titleMd="#{title}"
         titleMd.slice! ".rn"
         titleRn=titleMd

@@ -224,13 +224,14 @@ class Note
           end
         else 
           if title
+            Dir.chdir("cuaderno_global")
             if(File.exists? title)
               exportHtml(title)
             else
               puts "No existe el nombre de la nota #{title} en el libro #{book}"
             end
           else
-            exportAll()
+            exportAll() 
           end
         end
       end
