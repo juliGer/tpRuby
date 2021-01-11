@@ -1,0 +1,3105 @@
+Started GET "/" for ::1 at 2021-01-09 21:33:58 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (481.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (374.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 3 pending migrations:
+
+20210109152644_create_users.rb
+20210109154349_create_books.rb
+20210109155412_create_notes.rb
+
+
+):
+  
+activerecord (6.1.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.0) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.1) lib/rails/engine.rb:539:in `call'
+puma (5.1.1) lib/puma/configuration.rb:246:in `call'
+puma (5.1.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.1.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.1.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.1.1) lib/puma/server.rb:431:in `process_client'
+puma (5.1.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2021-01-09 21:34:02 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210109152644)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(200) NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109152644"]]
+  [1m[36mTRANSACTION (372.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20210109154349)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_bc582ddd02"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_books_on_name" ON "books" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109154349"]]
+  [1m[36mTRANSACTION (221.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateNotes (20210109155412)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "title" varchar NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_317dc639a3"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_notes_on_book_id" ON "notes" ("book_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_notes_on_title" ON "notes" ("title")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109155412"]]
+  [1m[36mTRANSACTION (176.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-10 00:34:03.027805"], ["updated_at", "2021-01-10 00:34:03.027805"]]
+  [1m[36mTRANSACTION (183.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-01-09 21:34:03 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.3ms | Allocations: 224)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2200)
+
+
+Started GET "/books" for ::1 at 2021-01-09 21:34:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+Started GET "/users" for ::1 at 2021-01-09 21:35:33 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1686)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.5
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 1884.5ms | Allocations: 27252)
+Completed 500 Internal Server Error in 1891ms (ActiveRecord: 0.4ms | Allocations: 29992)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/julian/tpRuby/rails/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/users/new" for ::1 at 2021-01-09 21:35:56 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 29.9ms | Allocations: 4393)
+  Rendered users/new.html.erb within layouts/application (Duration: 31.2ms | Allocations: 4734)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.5
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 648.1ms | Allocations: 9583)
+Completed 500 Internal Server Error in 657ms (ActiveRecord: 1.0ms | Allocations: 12659)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/julian/tpRuby/rails/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/users/new" for ::1 at 2021-01-09 21:41:27 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.2ms | Allocations: 2917)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 13282)
+Completed 200 OK in 31ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 20282)
+
+
+Started POST "/users" for ::1 at 2021-01-09 21:42:01 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"juliger@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "juliger@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "juliger@gmail.com"], ["password_digest", "$2a$12$FVIaE4vOJyLI19hPcObFi.DYBZ7nvZupLMhdXLo3SMJYw/6FrHCKu"], ["created_at", "2021-01-10 00:42:01.666711"], ["updated_at", "2021-01-10 00:42:01.666711"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (210.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 442ms (ActiveRecord: 210.9ms | Allocations: 8738)
+
+
+Started GET "/users/1" for ::1 at 2021-01-09 21:42:01 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3349)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 4555)
+
+
+Started GET "/use" for ::1 at 2021-01-09 21:43:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/use"):
+  
+Started GET "/users" for ::1 at 2021-01-09 21:43:17 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1167)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4408)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 5015)
+
+
+Started GET "/asd" for ::1 at 2021-01-09 21:43:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/asd"):
+  
+Started GET "/1/books" for ::1 at 2021-01-09 21:43:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/1/books"):
+  
+Started GET "/users/1/books" for ::1 at 2021-01-09 21:44:10 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2456)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5506)
+Completed 200 OK in 27ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 11966)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-09 21:44:13 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 6.2ms | Allocations: 3648)
+  Rendered books/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3968)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4032)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms | Allocations: 8974)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x0000000000a000>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books" for ::1 at 2021-01-09 21:44:33 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 812)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3925)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4902)
+
+
+Started GET "/users" for ::1 at 2021-01-09 21:44:37 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3916)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4308)
+
+
+Started GET "/" for ::1 at 2021-01-11 11:38:47 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 26.9ms | Allocations: 338)
+Completed 200 OK in 53ms (Views: 31.1ms | ActiveRecord: 0.0ms | Allocations: 2499)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 11:38:57 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 233.9ms | Allocations: 8600)
+Completed 200 OK in 284ms (Views: 235.6ms | ActiveRecord: 2.5ms | Allocations: 18430)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 11:38:59 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 17.4ms | Allocations: 3918)
+  Rendered books/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 4248)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4313)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.5ms | Allocations: 8895)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x000000000092e0>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 11:46:08 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.2ms | Allocations: 1653)
+  Rendered books/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2093)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2163)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.0ms | Allocations: 16419)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: ) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: ) do |form| %>
+2:      <% if book.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% book.errors.each do |error| %>
+8:              <li><%= error.full_message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :user_id %>
+16:        <%= form.text_field :user_id %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :name %>
+21:        <%= form.text_field :name %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/new.html.erb:3
+Started GET "/" for ::1 at 2021-01-11 11:46:16 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.0ms | Allocations: 224)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1039)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 11:46:16 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 7381)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 9140)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 11:46:18 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.2ms | Allocations: 1413)
+  Rendered books/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1735)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1832)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3495)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: ) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: ) do |form| %>
+2:      <% if book.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% book.errors.each do |error| %>
+8:              <li><%= error.full_message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :user_id %>
+16:        <%= form.text_field :user_id %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :name %>
+21:        <%= form.text_field :name %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/_form.html.erb:1: syntax error, unexpected ')'
+app/views/books/_form.html.erb:29: syntax error, unexpected `end', expecting end-of-input
+app/views/books/new.html.erb:3
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 11:46:26 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 8.1ms | Allocations: 3696)
+  Rendered books/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4018)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4083)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms | Allocations: 5894)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x00000000009d30>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 11:47:41 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 16.6ms | Allocations: 3640)
+  Rendered books/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 3962)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 4026)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms | Allocations: 5815)
+
+
+  
+ActionView::Template::Error (undefined method `/users/1/books/new_path' for #<ActionView::Base:0x0000000000a1e0>):
+    1: <%= form_with(model: new_user_book_path(@user)) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/boasd" for ::1 at 2021-01-11 11:50:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/boasd"):
+  
+Started GET "/" for ::1 at 2021-01-11 11:56:23 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.3ms | Allocations: 220)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 887)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 11:56:26 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2039)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2103)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms | Allocations: 4340)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"books", :user_id=>nil}, missing required keys: [:user_id]):
+    26: 
+    27: <br>
+    28: 
+    29: <%= link_to 'New Book', new_user_book_path(@book) %>
+  
+app/views/books/index.html.erb:29
+Started GET "/users/1/books" for ::1 at 2021-01-11 11:56:39 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1046)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4334)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.3ms | Allocations: 6000)
+
+
+Started GET "/" for ::1 at 2021-01-11 11:56:52 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.0ms | Allocations: 222)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 870)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 11:56:53 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3929)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 4888)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 11:56:53 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 14.5ms | Allocations: 3641)
+  Rendered books/new.html.erb within layouts/application (Duration: 15.9ms | Allocations: 4108)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5696)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms | Allocations: 6902)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x0000000000b130>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/boo" for ::1 at 2021-01-11 11:56:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/boo"):
+  
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:04:09 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2095)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 8093)
+Completed 200 OK in 43ms (Views: 21.2ms | ActiveRecord: 1.1ms | Allocations: 18831)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:04:11 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 8.0ms | Allocations: 3920)
+  Rendered books/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4250)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4315)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms | Allocations: 8898)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x000000000091a0>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:04:15 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4142)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 5262)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:04:15 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3920)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 4878)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:04:17 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 825)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3925)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 4902)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:04:18 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 10.9ms | Allocations: 3348)
+  Rendered books/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3577)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4051)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms | Allocations: 5192)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x00000000009678>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/" for ::1 at 2021-01-11 12:14:35 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.6ms | Allocations: 224)
+Completed 200 OK in 9ms (Views: 7.7ms | Allocations: 950)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:16:36 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 8081)
+Completed 200 OK in 36ms (Views: 15.9ms | ActiveRecord: 1.4ms | Allocations: 18879)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:16:37 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 7.2ms | Allocations: 3939)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4690)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4787)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms | Allocations: 8804)
+
+
+  
+ActionView::Template::Error (undefined method `books_path' for #<ActionView::Base:0x000000000091a0>):
+    1: <%= form_with(model: book) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started POST "/__web_console/repl_sessions/2989c070d30df405e5b81d957288d419/trace" for ::1 at 2021-01-11 12:17:22 -0300
+Started POST "/__web_console/repl_sessions/2989c070d30df405e5b81d957288d419/trace" for ::1 at 2021-01-11 12:17:23 -0300
+Started POST "/__web_console/repl_sessions/2989c070d30df405e5b81d957288d419/trace" for ::1 at 2021-01-11 12:19:35 -0300
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:20:21 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 6.1ms | Allocations: 4745)
+  Rendered books/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 5067)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5131)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms | Allocations: 7147)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x000000000097e0>
+Did you mean?  @user):
+    1: <%= form_with(model: [book,user]) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:20:34 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 31.3ms | Allocations: 6230)
+  Rendered books/new.html.erb within layouts/application (Duration: 32.4ms | Allocations: 6552)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 6616)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms | Allocations: 8405)
+
+
+  
+ActionView::Template::Error (undefined method `book_user_path' for #<ActionView::Base:0x00000000009c40>
+Did you mean?  user_book_path):
+    1: <%= form_with(model: [book,@user]) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:20:49 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 26.2ms | Allocations: 2544)
+  Rendered books/new.html.erb within layouts/application (Duration: 27.3ms | Allocations: 2905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 6313)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.1ms | Allocations: 8161)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:21:19 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.0ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1340)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4613)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 6448)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:21:20 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1052)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4154)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 5241)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:21:22 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 5.1ms | Allocations: 685)
+  Rendered books/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1224)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4475)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.1ms | Allocations: 5589)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:21:27 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.8ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4626)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 6444)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:22:24 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1525)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4763)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 5871)
+
+
+Started GET "/" for ::1 at 2021-01-11 12:22:29 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.7ms | Allocations: 224)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 941)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:22:37 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5483)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 7205)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:22:38 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.6ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5042)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.1ms | Allocations: 6280)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:23:15 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 12.1ms | Allocations: 3692)
+  Rendered books/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4054)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4544)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms | Allocations: 6340)
+
+
+  
+ActionView::Template::Error (undefined method `book_user_path' for #<ActionView::Base:0x0000000000a7f8>
+Did you mean?  user_book_path):
+    1: <%= form_with(model: [book,@user]) do |form| %>
+    2:   <% if book.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/new.html.erb:3
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:23:34 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1046)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4334)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 6163)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:23:35 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 3909)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.3ms | Allocations: 4868)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:23:36 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 5.8ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1795)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4941)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.1ms | Allocations: 6178)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:24:02 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4354)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 6022)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:24:03 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 13.3ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 22.5ms | Allocations: 1923)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 5021)
+Completed 200 OK in 67ms (Views: 62.7ms | ActiveRecord: 0.2ms | Allocations: 6259)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:24:14 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.5ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4612)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.1ms | Allocations: 6425)
+
+
+Started POST "/users/1/books" for ::1 at 2021-01-11 12:24:31 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro2"}, "commit"=>"Create Book", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Exists? (13.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "libro2"], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (1.7ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "libro2"], ["created_at", "2021-01-11 15:24:31.311655"], ["updated_at", "2021-01-11 15:24:31.311655"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (215.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 230.1ms | Allocations: 8109)
+
+
+  
+NoMethodError (undefined method `book_url' for #<BooksController:0x0000000000b0e0>):
+  
+app/controllers/books_controller.rb:28:in `create'
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:25:35 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.8ms | Allocations: 791)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 917)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4107)
+Completed 200 OK in 36ms (Views: 10.4ms | ActiveRecord: 2.2ms | Allocations: 13715)
+
+
+Started POST "/users/1/books" for ::1 at 2021-01-11 12:25:36 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro2"}, "commit"=>"Create Book", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "libro2"], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 4.6ms | Allocations: 1661)
+  Rendered books/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 4813)
+Completed 200 OK in 26ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 8770)
+
+
+Started POST "/users/1/books" for ::1 at 2021-01-11 12:25:43 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro2"}, "commit"=>"Create Book", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "libro2"], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 4.5ms | Allocations: 1597)
+  Rendered books/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4749)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.6ms | Allocations: 8593)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:25:53 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1419)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4520)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 5606)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:25:56 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 4093)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 5053)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:25:57 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.5ms | Allocations: 683)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 809)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3906)
+Completed 200 OK in 20ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 5596)
+
+
+Started POST "/users/1/books" for ::1 at 2021-01-11 12:26:01 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro3"}, "commit"=>"Create Book", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "libro3"], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "libro3"], ["created_at", "2021-01-11 15:26:01.421122"], ["updated_at", "2021-01-11 15:26:01.421122"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (66.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/users/1/books/2
+Completed 302 Found in 82ms (ActiveRecord: 67.5ms | Allocations: 6196)
+
+
+Started GET "/users/1/books/2" for ::1 at 2021-01-11 12:26:01 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 19.7ms | Allocations: 4142)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4522)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.6ms | Allocations: 6407)
+
+
+  
+ActionView::Template::Error (undefined method `edit_book_path' for #<ActionView::Base:0x0000000000cfa8>
+Did you mean?  edit_user_path
+               user_book_path):
+    10:   <%= @book.name %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_book_path(@book) %> |
+    14: <%= link_to 'Back', books_path %>
+  
+app/views/books/show.html.erb:13
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:26:31 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.4ms | Allocations: 984)
+  Rendered books/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4628)
+Completed 200 OK in 18ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 6453)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:26:33 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 4.3ms | Allocations: 688)
+  Rendered books/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 814)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3911)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 5029)
+
+
+Started POST "/users/1/books" for ::1 at 2021-01-11 12:26:38 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro4"}, "commit"=>"Create Book", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "libro4"], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "libro4"], ["created_at", "2021-01-11 15:26:38.822605"], ["updated_at", "2021-01-11 15:26:38.822605"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (197.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/users/1/books/3
+Completed 302 Found in 216ms (ActiveRecord: 198.2ms | Allocations: 6232)
+
+
+Started GET "/users/1/books/3" for ::1 at 2021-01-11 12:26:39 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 18.5ms | Allocations: 4355)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 4419)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms | Allocations: 6277)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `books_path' for #<ActionView::Base:0x0000000000d480>):
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_user_book_path(@book) %> |
+    14: <%= link_to 'Back', books_path %>
+  
+app/views/books/show.html.erb:14
+Started GET "/users/1/books/3" for ::1 at 2021-01-11 12:26:49 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 308)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3596)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 6066)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:26:54 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1574)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4675)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 5762)
+
+
+Started DELETE "/users/1/books/3" for ::1 at 2021-01-11 12:28:33 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mBook Destroy (7.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (155.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 164.7ms | Allocations: 17043)
+
+
+  
+NameError (undefined local variable or method `books_url' for #<BooksController:0x0000000000f0f0>
+Did you mean?  book_params):
+  
+app/controllers/books_controller.rb:46:in `destroy'
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:28:47 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 4261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 7281)
+Completed 200 OK in 41ms (Views: 19.8ms | ActiveRecord: 3.5ms | Allocations: 14019)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:28:52 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4251)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 5209)
+
+
+Started DELETE "/users/1/books/2" for ::1 at 2021-01-11 12:28:54 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (289.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+Redirected to http://localhost:3000/users/1/books
+Completed 302 Found in 304ms (ActiveRecord: 290.1ms | Allocations: 5549)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:28:55 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4079)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.4ms | Allocations: 5045)
+
+
+Started GET "/users/1/books/1/" for ::1 at 2021-01-11 12:29:43 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3262)
+Completed 200 OK in 25ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 5016)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:29:47 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:51:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 45.6ms | Allocations: 5411)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 5475)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 3.9ms | Allocations: 7964)
+
+
+  
+ActionView::Template::Error (undefined method `new_book_note_path' for #<ActionView::Base:0x00000000010ec8>
+Did you mean?  user_book_note_path
+               new_user_book_note_path
+               user_book_notes_path):
+    28: 
+    29: <br>
+    30: 
+    31: <%= link_to 'New Note', new_book_note_path(@book) %>
+  
+app/views/notes/index.html.erb:31
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:30:20 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:51:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4377)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 6043)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:30:35 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:51:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 15.6ms | Allocations: 3789)
+  Rendered notes/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 4131)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 4201)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.6ms | Allocations: 9383)
+
+
+  
+ActionView::Template::Error (undefined method `notes_path' for #<ActionView::Base:0x00000000011378>
+Did you mean?  font_path):
+    1: <%= form_with(model: note) do |form| %>
+    2:   <% if note.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+  
+app/views/notes/_form.html.erb:1
+app/views/notes/new.html.erb:3
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:31:14 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:51:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1086)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4374)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 6039)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:31:15 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:51:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 7.7ms | Allocations: 3672)
+  Rendered notes/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3994)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4058)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms | Allocations: 5265)
+
+
+  
+ActionView::Template::Error (undefined method `book_notes_path' for #<ActionView::Base:0x00000000011940>):
+    1: <%= form_with(model: [@user,@book,note]) do |form| %>
+    2:   <% if note.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+  
+app/views/notes/_form.html.erb:1
+app/views/notes/new.html.erb:3
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:34:04 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 4487)
+Completed 200 OK in 40ms (Views: 16.5ms | ActiveRecord: 2.4ms | Allocations: 14666)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:34:06 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 25.7ms | Allocations: 1270)
+  Rendered notes/new.html.erb within layouts/application (Duration: 54.5ms | Allocations: 5461)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 5525)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.7ms | Allocations: 10494)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notes_path' for #<ActionView::Base:0x000000000135d8>
+Did you mean?  font_path):
+    2: 
+    3: <%= render 'form', note: @note %>
+    4: 
+    5: <%= link_to 'Back', notes_path %>
+  
+app/views/notes/new.html.erb:5
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:34:37 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 4.7ms | Allocations: 1199)
+  Rendered notes/new.html.erb within layouts/application (Duration: 17.0ms | Allocations: 5675)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 5739)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.2ms | Allocations: 8068)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notes_path' for #<ActionView::Base:0x00000000013cb8>
+Did you mean?  font_path):
+    2: 
+    3: <%= render 'form', note: @note %>
+    4: 
+    5: <%= link_to 'Back', notes_path %>
+  
+app/views/notes/new.html.erb:5
+Started GET "/users/1/books/1/" for ::1 at 2021-01-11 12:34:40 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3542)
+Completed 200 OK in 21ms (Views: 12.6ms | ActiveRecord: 0.3ms | Allocations: 6699)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:34:42 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4206)
+Completed 200 OK in 16ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 5830)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:34:43 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 1.7ms | Allocations: 866)
+  Rendered notes/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 5122)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5186)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 6808)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `notes_path' for #<ActionView::Base:0x00000000014280>
+Did you mean?  font_path):
+    2: 
+    3: <%= render 'form', note: @note %>
+    4: 
+    5: <%= link_to 'Back', notes_path %>
+  
+app/views/notes/new.html.erb:5
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:34:48 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 4530)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.4ms | Allocations: 6026)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:35:25 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.4ms | Allocations: 1199)
+  Rendered notes/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4848)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 7210)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:35:27 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1086)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4187)
+Completed 200 OK in 43ms (Views: 12.2ms | ActiveRecord: 4.1ms | Allocations: 6393)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:35:28 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 4.9ms | Allocations: 866)
+  Rendered notes/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 994)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4091)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 5744)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:35:34 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 4.2ms | Allocations: 863)
+  Rendered notes/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1567)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4664)
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 0.3ms | Allocations: 6317)
+
+
+Started POST "/users/1/books/1/notes" for ::1 at 2021-01-11 12:35:41 -0300
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"book_id"=>"1", "title"=>"nota 1", "content"=>"texto"}, "commit"=>"Create Note", "user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Exists? (14.5ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? LIMIT ?[0m  [["title", "nota 1"], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Create (6.0ms)[0m  [1m[32mINSERT INTO "notes" ("book_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 1], ["title", "nota 1"], ["content", "texto"], ["created_at", "2021-01-11 15:35:41.829410"], ["updated_at", "2021-01-11 15:35:41.829410"]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (221.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 242.3ms | Allocations: 8984)
+
+
+  
+NoMethodError (undefined method `note_url' for #<NotesController:0x00000000014780>):
+  
+app/controllers/notes_controller.rb:29:in `create'
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:36:40 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.6ms | Allocations: 1021)
+  Rendered notes/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4201)
+Completed 200 OK in 45ms (Views: 12.4ms | ActiveRecord: 3.0ms | Allocations: 17649)
+
+
+Started POST "/users/1/books/1/notes" for ::1 at 2021-01-11 12:36:45 -0300
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"book_id"=>"1", "title"=>"nota 12", "content"=>"texto"}, "commit"=>"Create Note", "user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? LIMIT ?[0m  [["title", "nota 12"], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("book_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 1], ["title", "nota 12"], ["content", "texto"], ["created_at", "2021-01-11 15:36:45.182590"], ["updated_at", "2021-01-11 15:36:45.182590"]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (68.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 69.8ms | Allocations: 8813)
+
+
+  
+NoMethodError (undefined method `note_url' for #<NotesController:0x000000000163c8>):
+  
+app/controllers/notes_controller.rb:29:in `create'
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:36:57 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 4.4ms | Allocations: 1021)
+  Rendered notes/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1287)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4339)
+Completed 200 OK in 54ms (Views: 12.9ms | ActiveRecord: 3.3ms | Allocations: 17670)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:36:58 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4216)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4837)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.8ms | Allocations: 6306)
+
+
+  
+ActionView::Template::Error (undefined method `book_note_path' for #<ActionView::Base:0x00000000017ed0>):
+    18:         <td><%= note.book_id %></td>
+    19:         <td><%= note.title %></td>
+    20:         <td><%= note.content %></td>
+    21:         <td><%= link_to 'Show', [@book, note] %></td>
+    22:         <td><%= link_to 'Edit', edit_book_note_path(@book, note) %></td>
+    23:         <td><%= link_to 'Destroy', [@book, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+  
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:16
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:37:00 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 2.3ms | Allocations: 863)
+  Rendered notes/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 4104)
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 0.3ms | Allocations: 5895)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:37:01 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 4094)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4161)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms | Allocations: 6102)
+
+
+  
+ActionView::Template::Error (undefined method `book_note_path' for #<ActionView::Base:0x000000000183f8>):
+    18:         <td><%= note.book_id %></td>
+    19:         <td><%= note.title %></td>
+    20:         <td><%= note.content %></td>
+    21:         <td><%= link_to 'Show', [@book, note] %></td>
+    22:         <td><%= link_to 'Edit', edit_book_note_path(@book, note) %></td>
+    23:         <td><%= link_to 'Destroy', [@book, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+  
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:16
+Started GET "/users/1/books/1/" for ::1 at 2021-01-11 12:37:02 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3372)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 6567)
+
+
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:37:07 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 4.2ms | Allocations: 1031)
+  Rendered books/edit.html.erb within layouts/application (Duration: 12.6ms | Allocations: 4625)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4692)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms | Allocations: 7034)
+
+
+  
+ActionView::Template::Error (undefined method `book_path' for #<ActionView::Base:0x00000000018790>):
+    2: 
+    3: <%= render 'form', book: @book %>
+    4: 
+    5: <%= link_to 'Show', @book %> |
+    6: <%= link_to 'Back', books_path %>
+  
+app/views/books/edit.html.erb:5
+Started GET "/users/1/books/1/" for ::1 at 2021-01-11 12:37:08 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3264)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 5017)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:37:13 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 4023)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4087)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms | Allocations: 5557)
+
+
+  
+ActionView::Template::Error (undefined method `book_note_path' for #<ActionView::Base:0x00000000018ad8>):
+    18:         <td><%= note.book_id %></td>
+    19:         <td><%= note.title %></td>
+    20:         <td><%= note.content %></td>
+    21:         <td><%= link_to 'Show', [@book, note] %></td>
+    22:         <td><%= link_to 'Edit', edit_book_note_path(@book, note) %></td>
+    23:         <td><%= link_to 'Destroy', [@book, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+  
+app/views/notes/index.html.erb:21
+app/views/notes/index.html.erb:16
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:37:51 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 41.8ms | Allocations: 5035)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 5099)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.4ms | Allocations: 7276)
+
+
+  
+ActionView::Template::Error (undefined method `edit_book_note_path' for #<ActionView::Base:0x00000000018e20>
+Did you mean?  edit_user_book_note_path
+               user_book_note_path):
+    19:         <td><%= note.title %></td>
+    20:         <td><%= note.content %></td>
+    21:         <td><%= link_to 'Show', [@user,@book, note] %></td>
+    22:         <td><%= link_to 'Edit', edit_book_note_path(@book, note) %></td>
+    23:         <td><%= link_to 'Destroy', [@user,@book, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+    25:     <% end %>
+  
+app/views/notes/index.html.erb:22
+app/views/notes/index.html.erb:16
+Started GET "/users/1/books/1/nasd" for ::1 at 2021-01-11 12:37:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/books/1/nasd"):
+  
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:38:22 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1478)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4766)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 6972)
+
+
+Started GET "/users/1/books/1/notes/1" for ::1 at 2021-01-11 12:38:27 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/show.html.erb within layouts/application (Duration: 19.6ms | Allocations: 4476)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 4733)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.6ms | Allocations: 7141)
+
+
+  
+ActionView::Template::Error (undefined method `edit_note_path' for #<ActionView::Base:0x00000000019690>
+Did you mean?  edit_user_path):
+    15:   <%= @note.content %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_note_path(@note) %> |
+    19: <%= link_to 'Back', user_book_notes_path %>
+  
+app/views/notes/show.html.erb:18
+Started GET "/users/1/books/1/notes/1" for ::1 at 2021-01-11 12:38:52 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3622)
+Completed 200 OK in 23ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 6623)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:38:56 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2053)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5154)
+Completed 200 OK in 24ms (Views: 17.7ms | ActiveRecord: 0.4ms | Allocations: 6780)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:39:10 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1478)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4766)
+Completed 200 OK in 23ms (Views: 13.1ms | ActiveRecord: 0.6ms | Allocations: 6973)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:39:13 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.2ms | Allocations: 1199)
+  Rendered notes/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1558)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4666)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 7034)
+
+
+Started POST "/users/1/books/1/notes" for ::1 at 2021-01-11 12:39:51 -0300
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"book_id"=>"1", "title"=>"libro2", "content"=>"libro2"}, "commit"=>"Create Note", "user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? LIMIT ?[0m  [["title", "libro2"], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("book_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 1], ["title", "libro2"], ["content", "libro2"], ["created_at", "2021-01-11 15:39:51.115833"], ["updated_at", "2021-01-11 15:39:51.115833"]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (212.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 213.7ms | Allocations: 8833)
+
+
+  
+NoMethodError (undefined method `note_url' for #<NotesController:0x00000000019d98>):
+  
+app/controllers/notes_controller.rb:29:in `create'
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:40:14 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.4ms | Allocations: 1021)
+  Rendered notes/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4252)
+Completed 200 OK in 59ms (Views: 18.9ms | ActiveRecord: 3.3ms | Allocations: 17670)
+
+
+Started POST "/users/1/books/1/notes" for ::1 at 2021-01-11 12:40:19 -0300
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"book_id"=>"1", "title"=>"libro223", "content"=>"libro2"}, "commit"=>"Create Note", "user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? LIMIT ?[0m  [["title", "libro223"], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO "notes" ("book_id", "title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["book_id", 1], ["title", "libro223"], ["content", "libro2"], ["created_at", "2021-01-11 15:40:19.878948"], ["updated_at", "2021-01-11 15:40:19.878948"]]
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (59.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:28:in `create'
+Redirected to http://localhost:3000/users/1/books/1/notes/4
+Completed 302 Found in 80ms (ActiveRecord: 60.9ms | Allocations: 6754)
+
+
+Started GET "/users/1/books/1/notes/4" for ::1 at 2021-01-11 12:40:19 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3422)
+Completed 200 OK in 19ms (Views: 10.2ms | ActiveRecord: 0.9ms | Allocations: 5873)
+
+
+Started GET "/users/1/books/1/notes/4/edit" for ::1 at 2021-01-11 12:40:33 -0300
+Processing by NotesController#edit as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 4.5ms | Allocations: 907)
+  Rendered notes/edit.html.erb within layouts/application (Duration: 43.2ms | Allocations: 4324)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 4388)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.4ms | Allocations: 7359)
+
+
+  
+ActionView::Template::Error (undefined method `note_path' for #<ActionView::Base:0x0000000001ba80>
+Did you mean?  font_path):
+    2: 
+    3: <%= render 'form', note: @note %>
+    4: 
+    5: <%= link_to 'Show', @note %> |
+    6: <%= link_to 'Back', notes_path %>
+  
+app/views/notes/edit.html.erb:5
+Started GET "/users/1/books/1/notes/4/edit" for ::1 at 2021-01-11 12:41:01 -0300
+Processing by NotesController#edit as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 5.6ms | Allocations: 1222)
+  Rendered notes/edit.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 4950)
+Completed 200 OK in 45ms (Views: 30.2ms | ActiveRecord: 0.4ms | Allocations: 7951)
+
+
+Started GET "/users/1/books/1/notes/4" for ::1 at 2021-01-11 12:41:03 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3413)
+Completed 200 OK in 25ms (Views: 8.1ms | ActiveRecord: 0.4ms | Allocations: 6415)
+
+
+Started GET "/users/1/books/1/notes/4/edit" for ::1 at 2021-01-11 12:41:05 -0300
+Processing by NotesController#edit as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.8ms | Allocations: 889)
+  Rendered notes/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4180)
+Completed 200 OK in 35ms (Views: 12.2ms | ActiveRecord: 1.2ms | Allocations: 7058)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:41:06 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 5734)
+Completed 200 OK in 25ms (Views: 19.4ms | ActiveRecord: 0.5ms | Allocations: 7360)
+
+
+Started GET "/users/1/books/1/notes/new" for ::1 at 2021-01-11 12:41:06 -0300
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.9ms | Allocations: 871)
+  Rendered notes/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4201)
+Completed 200 OK in 21ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 6550)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:41:08 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 5269)
+Completed 200 OK in 33ms (Views: 27.7ms | ActiveRecord: 0.4ms | Allocations: 6770)
+
+
+Started DELETE "/users/1/books/1/notes/4" for ::1 at 2021-01-11 12:41:28 -0300
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "book_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+  [1m[36mNote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+  [1m[36mTRANSACTION (59.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+Redirected to http://localhost:3000/users/1/books/1/notes
+Completed 302 Found in 75ms (ActiveRecord: 60.4ms | Allocations: 5960)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:41:28 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1668)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4940)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 7153)
+
+
+Started DELETE "/users/1/books/1/notes/3" for ::1 at 2021-01-11 12:41:31 -0300
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "book_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+  [1m[36mNote Destroy (1.3ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+  [1m[36mTRANSACTION (53.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+Redirected to http://localhost:3000/users/1/books/1/notes
+Completed 302 Found in 76ms (ActiveRecord: 55.7ms | Allocations: 5596)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:41:31 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 4326)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 1.2ms | Allocations: 5832)
+
+
+Started DELETE "/users/1/books/1/notes/2" for ::1 at 2021-01-11 12:41:32 -0300
+Processing by NotesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "book_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+  [1m[36mNote Destroy (0.4ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+  [1m[36mTRANSACTION (55.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:46:in `destroy'
+Redirected to http://localhost:3000/users/1/books/1/notes
+Completed 302 Found in 71ms (ActiveRecord: 56.2ms | Allocations: 5960)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:41:32 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4123)
+Completed 200 OK in 34ms (Views: 25.5ms | ActiveRecord: 0.6ms | Allocations: 5944)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:41:46 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1023)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4121)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 5619)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:41:53 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 5011)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.5ms | Allocations: 6890)
+
+
+Started GET "/users/1/books/1" for ::1 at 2021-01-11 12:41:55 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 309)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3410)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 5307)
+
+
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:41:57 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.8ms | Allocations: 1008)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.1ms | Allocations: 4547)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 5028)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms | Allocations: 6885)
+
+
+  
+ActionView::Template::Error (undefined method `book_path' for #<ActionView::Base:0x0000000001c390>):
+    2: 
+    3: <%= render 'form', book: @book %>
+    4: 
+    5: <%= link_to 'Show', @book %> |
+    6: <%= link_to 'Back', books_path %>
+  
+app/views/books/edit.html.erb:5
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:42:00 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 4099)
+Completed 200 OK in 36ms (Views: 21.8ms | ActiveRecord: 1.3ms | Allocations: 5653)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:42:05 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1035)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4136)
+Completed 200 OK in 24ms (Views: 14.5ms | ActiveRecord: 0.5ms | Allocations: 5634)
+
+
+Started GET "/users/1/books/1/notes/1/edit" for ::1 at 2021-01-11 12:42:07 -0300
+Processing by NotesController#edit as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.2ms | Allocations: 1222)
+  Rendered notes/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1657)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4755)
+Completed 200 OK in 30ms (Views: 12.6ms | ActiveRecord: 0.6ms | Allocations: 7760)
+
+
+Started PATCH "/users/1/books/1/notes/1" for ::1 at 2021-01-11 12:42:10 -0300
+Processing by NotesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"book_id"=>"1", "title"=>"nota 12", "content"=>"texto"}, "commit"=>"Update Note", "user_id"=>"1", "book_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:37:in `update'
+  [1m[36mNote Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? LIMIT ?[0m  [["title", "nota 12"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:37:in `update'
+  [1m[36mNote Update (0.4ms)[0m  [1m[33mUPDATE "notes" SET "title" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["title", "nota 12"], ["updated_at", "2021-01-11 15:42:10.746161"], ["id", 1]]
+  ↳ app/controllers/notes_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (168.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:37:in `update'
+Redirected to http://localhost:3000/users/1/books/1/notes/1
+Completed 302 Found in 201ms (ActiveRecord: 169.6ms | Allocations: 7575)
+
+
+Started GET "/users/1/books/1/notes/1" for ::1 at 2021-01-11 12:42:10 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 314)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3415)
+Completed 200 OK in 28ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 5836)
+
+
+Started GET "/users/1/books/1/notes" for ::1 at 2021-01-11 12:42:12 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/notes/index.html.erb:16
+  Rendered notes/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4127)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 5628)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:42:16 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 4092)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.3ms | Allocations: 5051)
+
+
+Started GET "/users/1/books/1" for ::1 at 2021-01-11 12:42:20 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 3833)
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 5589)
+
+
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:42:22 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 4.0ms | Allocations: 703)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3972)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 4622)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.3ms | Allocations: 6347)
+
+
+  
+ActionView::Template::Error (undefined method `book_path' for #<ActionView::Base:0x0000000001cac0>):
+    2: 
+    3: <%= render 'form', book: @book %>
+    4: 
+    5: <%= link_to 'Show', @book %> |
+    6: <%= link_to 'Back', books_path %>
+  
+app/views/books/edit.html.erb:5
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:43:02 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.4ms | Allocations: 1005)
+  Rendered books/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4726)
+Completed 200 OK in 21ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 7187)
+
+
+Started PATCH "/users/1/books/1" for ::1 at 2021-01-11 12:43:06 -0300
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro24"}, "commit"=>"Update Book", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:36:in `update'
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? AND "books"."id" != ? LIMIT ?[0m  [["name", "libro24"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `update'
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE "books" SET "name" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["name", "libro24"], ["updated_at", "2021-01-11 15:43:06.124325"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:36:in `update'
+  [1m[36mTRANSACTION (79.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:36:in `update'
+Redirected to http://localhost:3000/users/1/books/1
+Completed 302 Found in 106ms (ActiveRecord: 81.0ms | Allocations: 7061)
+
+
+Started GET "/users/1/books/1" for ::1 at 2021-01-11 12:43:06 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 308)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3409)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 5296)
+
+
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:43:07 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.6ms | Allocations: 706)
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3990)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 5744)
+
+
+Started GET "/users/1/books/1" for ::1 at 2021-01-11 12:43:08 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3244)
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 5000)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:43:10 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1810)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4911)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.4ms | Allocations: 5997)
+
+
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:43:12 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 5.3ms | Allocations: 703)
+  Rendered books/edit.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1472)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4569)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 6326)
+
+
+Started DELETE "/users/1/books/1" for ::1 at 2021-01-11 12:43:15 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mBook Destroy (0.9ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms | Allocations: 5572)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/books_controller.rb:45:in `destroy'
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:43:34 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4093)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 5050)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:43:35 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4077)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 5035)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:46:04 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4077)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 5030)
+
+
+Started GET "/users/1/books/1/edit" for ::1 at 2021-01-11 12:46:05 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.4ms | Allocations: 703)
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3985)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 5741)
+
+
+Started GET "/" for ::1 at 2021-01-11 12:46:09 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.3ms | Allocations: 219)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 867)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-01-11 12:46:30 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.7ms | Allocations: 338)
+Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 2700)
+
+
+Started GET "/" for ::1 at 2021-01-11 12:46:37 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.9ms | Allocations: 228)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 1092)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:46:52 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 5357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 11314)
+Completed 200 OK in 110ms (Views: 38.5ms | ActiveRecord: 6.1ms | Allocations: 20592)
+
+
+Started DELETE "/users/1/books/1" for ::1 at 2021-01-11 12:46:56 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mBook Destroy (0.8ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.4ms | Allocations: 5664)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/books_controller.rb:45:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:48:50 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 5472)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 11436)
+Completed 200 OK in 70ms (Views: 34.6ms | ActiveRecord: 2.6ms | Allocations: 22233)
+
+
+Started DELETE "/users/1/books/1" for ::1 at 2021-01-11 12:48:52 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mBook Destroy (0.7ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.6ms | Allocations: 5685)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/books_controller.rb:45:in `destroy'
+Started DELETE "/users/1/books/1" for ::1 at 2021-01-11 12:49:46 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user_id"=>"1", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mNote Destroy (0.9ms)[0m  [1m[31mDELETE FROM "notes" WHERE "notes"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mBook Destroy (0.7ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (342.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:45:in `destroy'
+Redirected to http://localhost:3000/users/1/books
+Completed 302 Found in 410ms (ActiveRecord: 348.0ms | Allocations: 21318)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-11 12:49:46 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 4233)
+Completed 200 OK in 25ms (Views: 18.1ms | ActiveRecord: 0.3ms | Allocations: 5371)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-11 12:49:54 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 10.0ms | Allocations: 3206)
+  Rendered books/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 3569)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 6667)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 7920)
+
+
+Started POST "/users/1/books" for ::1 at 2021-01-11 12:49:58 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"user_id"=>"1", "name"=>"libro1"}, "commit"=>"Create Book", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "libro1"], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "libro1"], ["created_at", "2021-01-11 15:49:58.721949"], ["updated_at", "2021-01-11 15:49:58.721949"]]
+  ↳ app/controllers/books_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (59.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:27:in `create'
+Redirected to http://localhost:3000/users/1/books/4
+Completed 302 Found in 74ms (ActiveRecord: 60.2ms | Allocations: 6483)
+
+
+Started GET "/users/1/books/4" for ::1 at 2021-01-11 12:49:58 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:56:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 317)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3419)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 5306)
+
+
