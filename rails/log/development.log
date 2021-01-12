@@ -3103,3 +3103,834 @@ Processing by BooksController#show as HTML
 Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 5306)
 
 
+Started GET "/" for ::1 at 2021-01-12 18:37:51 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.1ms | Allocations: 338)
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 2616)
+
+
+Started GET "/" for ::1 at 2021-01-12 18:38:09 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.4ms | Allocations: 338)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 2549)
+
+
+Started GET "/" for ::1 at 2021-01-12 18:40:48 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 219)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 21090)
+Completed 200 OK in 39ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 23816)
+
+
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/julian/tpRuby/rails/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/julian/tpRuby/rails/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/julian/tpRuby/rails/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/julian/tpRuby/rails/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /home/julian/tpRuby/rails/bin/rails:5)
+Started GET "/" for ::1 at 2021-01-12 18:41:31 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210112214116_devise_create_users.rb
+
+
+):
+  
+activerecord (6.1.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.0) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.1) lib/rails/engine.rb:539:in `call'
+puma (5.1.1) lib/puma/configuration.rb:246:in `call'
+puma (5.1.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.1.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.1.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.1.1) lib/puma/server.rb:431:in `process_client'
+puma (5.1.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2021-01-12 18:41:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20210112214116)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: table "users" already exists):
+  
+sqlite3 (1.4.2) lib/sqlite3/database.rb:147:in `initialize'
+sqlite3 (1.4.2) lib/sqlite3/database.rb:147:in `new'
+sqlite3 (1.4.2) lib/sqlite3/database.rb:147:in `prepare'
+sqlite3 (1.4.2) lib/sqlite3/database.rb:193:in `execute'
+activerecord (6.1.1) lib/active_record/connection_adapters/sqlite3/database_statements.rb:31:in `block (2 levels) in execute'
+activesupport (6.1.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.1.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.1.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.1.1) lib/active_record/connection_adapters/sqlite3/database_statements.rb:30:in `block in execute'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract_adapter.rb:697:in `block (2 levels) in log'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract_adapter.rb:696:in `block in log'
+activesupport (6.1.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract_adapter.rb:688:in `log'
+activerecord (6.1.1) lib/active_record/connection_adapters/sqlite3/database_statements.rb:29:in `execute'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:322:in `create_table'
+activerecord (6.1.1) lib/active_record/migration.rb:929:in `block in method_missing'
+activerecord (6.1.1) lib/active_record/migration.rb:897:in `block in say_with_time'
+/home/julian/.rbenv/versions/2.7.1/lib/ruby/2.7.0/benchmark.rb:293:in `measure'
+activerecord (6.1.1) lib/active_record/migration.rb:897:in `say_with_time'
+activerecord (6.1.1) lib/active_record/migration.rb:918:in `method_missing'
+db/migrate/20210112214116_devise_create_users.rb:5:in `change'
+activerecord (6.1.1) lib/active_record/migration.rb:867:in `exec_migration'
+activerecord (6.1.1) lib/active_record/migration.rb:851:in `block (2 levels) in migrate'
+/home/julian/.rbenv/versions/2.7.1/lib/ruby/2.7.0/benchmark.rb:293:in `measure'
+activerecord (6.1.1) lib/active_record/migration.rb:850:in `block in migrate'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.1) lib/active_record/migration.rb:849:in `migrate'
+activerecord (6.1.1) lib/active_record/migration.rb:1037:in `migrate'
+activerecord (6.1.1) lib/active_record/migration.rb:1329:in `block in execute_migration_in_transaction'
+activerecord (6.1.1) lib/active_record/migration.rb:1380:in `block in ddl_transaction'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `block in transaction'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/transaction.rb:310:in `block in within_new_transaction'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/transaction.rb:308:in `within_new_transaction'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `transaction'
+activerecord (6.1.1) lib/active_record/transactions.rb:209:in `transaction'
+activerecord (6.1.1) lib/active_record/migration.rb:1380:in `ddl_transaction'
+activerecord (6.1.1) lib/active_record/migration.rb:1328:in `execute_migration_in_transaction'
+activerecord (6.1.1) lib/active_record/migration.rb:1302:in `each'
+activerecord (6.1.1) lib/active_record/migration.rb:1302:in `migrate_without_lock'
+activerecord (6.1.1) lib/active_record/migration.rb:1253:in `migrate'
+activerecord (6.1.1) lib/active_record/migration.rb:1086:in `up'
+activerecord (6.1.1) lib/active_record/migration.rb:1061:in `migrate'
+activerecord (6.1.1) lib/active_record/tasks/database_tasks.rb:237:in `migrate'
+activerecord (6.1.1) lib/active_record/migration.rb:137:in `block in <class:PendingMigrationError>'
+activesupport (6.1.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.0) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.1) lib/rails/engine.rb:539:in `call'
+puma (5.1.1) lib/puma/configuration.rb:246:in `call'
+puma (5.1.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.1.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.1.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.1.1) lib/puma/server.rb:431:in `process_client'
+puma (5.1.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (167.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (174.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20210109154349)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_bc582ddd02"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_books_on_name" ON "books" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109154349"]]
+  [1m[36mTRANSACTION (300.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateNotes (20210109155412)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "title" varchar NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_317dc639a3"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_notes_on_book_id" ON "notes" ("book_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_notes_on_title" ON "notes" ("title")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109155412"]]
+  [1m[36mTRANSACTION (191.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20210112214116)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210112214116"]]
+  [1m[36mTRANSACTION (194.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-12 21:41:59.182397"], ["updated_at", "2021-01-12 21:41:59.182397"]]
+  [1m[36mTRANSACTION (62.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/rails/actions" for ::1 at 2021-01-12 18:42:09 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-01-12 18:42:09 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6361)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 9259)
+
+
+Started GET "/f" for ::1 at 2021-01-12 18:42:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/f"):
+  
+Started GET "/" for ::1 at 2021-01-12 18:44:24 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms | Allocations: 2125)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 18:44:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 618)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 107.2ms | Allocations: 3126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 118.2ms | Allocations: 9231)
+Completed 200 OK in 131ms (Views: 122.1ms | ActiveRecord: 0.6ms | Allocations: 16673)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-01-12 18:45:23 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 146)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5014)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 6290)
+
+
+Started POST "/users" for ::1 at 2021-01-12 18:45:27 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 981)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 109)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3058)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6149)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 9429)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-01-12 18:45:30 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 109)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1060)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4210)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4724)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 18:45:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 156)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4170)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4766)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 18:45:34 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 156)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4158)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4750)
+
+
+Started GET "/asd" for ::1 at 2021-01-12 18:45:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/asd"):
+  
+Started GET "/users/sign_in" for ::1 at 2021-01-12 18:45:36 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4411)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 5117)
+
+
+Started GET "/" for ::1 at 2021-01-12 18:45:41 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 232)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 18:45:41 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 156)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4158)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4748)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:12:43 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms | Allocations: 1690)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 19:12:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 622)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2910)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 9015)
+Completed 200 OK in 48ms (Views: 32.2ms | ActiveRecord: 0.9ms | Allocations: 16221)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-01-12 19:12:48 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 3.4ms | Allocations: 228)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 146)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1881)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5011)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 6274)
+
+
+Started POST "/users" for ::1 at 2021-01-12 19:13:06 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"juuliiger@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "juuliiger@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 2.4ms | Allocations: 585)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 109)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5237)
+Completed 200 OK in 273ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 14131)
+
+
+Started POST "/users" for ::1 at 2021-01-12 19:13:14 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"juuliiger@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "juuliiger@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "juuliiger@gmail.com"], ["encrypted_password", "$2a$12$3RjfC1XsQmluUsYthxmrxuufJkm0mwfeR8p53NlysGirw4oBjgY0K"], ["created_at", "2021-01-12 22:13:14.993263"], ["updated_at", "2021-01-12 22:13:14.993263"]]
+  [1m[36mTRANSACTION (196.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 446ms (ActiveRecord: 197.6ms | Allocations: 6438)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:13:15 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 3248)
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 5399)
+
+
+Started GET "/users" for ::1 at 2021-01-12 19:13:27 -0300
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/users/1/books" for ::1 at 2021-01-12 19:14:29 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 3917)
+
+
+  
+NoMethodError (undefined method `books' for #<User:0x00007f1a3400a848>):
+  
+app/controllers/books_controller.rb:7:in `index'
+Started GET "/users/1/books" for ::1 at 2021-01-12 19:22:45 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms | Allocations: 8595)
+
+
+  
+NoMethodError (undefined method `books' for #<User:0x00007f1a1c628058>):
+  
+app/controllers/books_controller.rb:7:in `index'
+Started GET "/users/1/books" for ::1 at 2021-01-12 19:23:41 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.2ms | Allocations: 8369)
+
+
+  
+NoMethodError (undefined method `books' for #<User:0x000055cc991fa520>):
+  
+app/controllers/books_controller.rb:6:in `index'
+Started GET "/use" for ::1 at 2021-01-12 19:24:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/use"):
+  
+Started GET "/use" for ::1 at 2021-01-12 19:27:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/use"):
+  
+Started GET "/users/1/books" for ::1 at 2021-01-12 19:28:01 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 10.7ms | Allocations: 8397)
+
+
+  
+NoMethodError (undefined method `books' for #<User:0x000055cc98e084a8>):
+  
+app/controllers/books_controller.rb:7:in `index'
+Started GET "/users/1/books" for ::1 at 2021-01-12 19:30:12 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5317)
+Completed 200 OK in 47ms (Views: 25.6ms | ActiveRecord: 2.7ms | Allocations: 14531)
+
+
+Started GET "/users/1/books/new" for ::1 at 2021-01-12 19:30:16 -0300
+Processing by BooksController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 6.6ms | Allocations: 1247)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1608)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4678)
+Completed 200 OK in 28ms (Views: 13.4ms | ActiveRecord: 0.6ms | Allocations: 8935)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:30:22 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3175)
+Completed 200 OK in 18ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 5307)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-12 19:30:32 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:52:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:15
+  Rendered books/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 814)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3937)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 5134)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:30:46 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3169)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 4638)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:47:39 -0300
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 6366)
+Completed 200 OK in 88ms (Views: 31.0ms | ActiveRecord: 2.0ms | Allocations: 15249)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:48:01 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 188)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 19:48:01 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 3.4ms | Allocations: 620)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2790)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5926)
+Completed 200 OK in 47ms (Views: 39.8ms | ActiveRecord: 0.0ms | Allocations: 7861)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-01-12 19:48:03 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 2.8ms | Allocations: 228)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 146)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 5009)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 6281)
+
+
+Started POST "/users" for ::1 at 2021-01-12 19:48:14 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"juli@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 0.0ms | Allocations: 6033)
+
+
+  
+NoMethodError (protected method `password_digest' called for #<User:0x00007fad644a8a80>
+Did you mean?  password):
+  
+activemodel (6.1.1) lib/active_model/attribute_methods.rb:466:in `method_missing'
+activemodel (6.1.1) lib/active_model/secure_password.rb:82:in `public_send'
+activemodel (6.1.1) lib/active_model/secure_password.rb:82:in `block in has_secure_password'
+activesupport (6.1.1) lib/active_support/callbacks.rb:427:in `instance_exec'
+activesupport (6.1.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+activesupport (6.1.1) lib/active_support/callbacks.rb:604:in `block (2 levels) in default_terminator'
+activesupport (6.1.1) lib/active_support/callbacks.rb:603:in `catch'
+activesupport (6.1.1) lib/active_support/callbacks.rb:603:in `block in default_terminator'
+activesupport (6.1.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.1) lib/active_support/callbacks.rb:105:in `run_callbacks'
+activesupport (6.1.1) lib/active_support/callbacks.rb:824:in `_run_validate_callbacks'
+activemodel (6.1.1) lib/active_model/validations.rb:406:in `run_validations!'
+activemodel (6.1.1) lib/active_model/validations/callbacks.rb:117:in `block in run_validations!'
+activesupport (6.1.1) lib/active_support/callbacks.rb:106:in `run_callbacks'
+activesupport (6.1.1) lib/active_support/callbacks.rb:824:in `_run_validation_callbacks'
+activemodel (6.1.1) lib/active_model/validations/callbacks.rb:117:in `run_validations!'
+activemodel (6.1.1) lib/active_model/validations.rb:337:in `valid?'
+activerecord (6.1.1) lib/active_record/validations.rb:68:in `valid?'
+activerecord (6.1.1) lib/active_record/validations.rb:84:in `perform_validations'
+activerecord (6.1.1) lib/active_record/validations.rb:47:in `save'
+activerecord (6.1.1) lib/active_record/transactions.rb:298:in `block in save'
+activerecord (6.1.1) lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `block in transaction'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/transaction.rb:310:in `block in within_new_transaction'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/transaction.rb:308:in `within_new_transaction'
+activerecord (6.1.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `transaction'
+activerecord (6.1.1) lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+activerecord (6.1.1) lib/active_record/transactions.rb:298:in `save'
+activerecord (6.1.1) lib/active_record/suppressor.rb:44:in `save'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (6.1.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.1) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.1) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.1.1) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.0) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.1) lib/rails/engine.rb:539:in `call'
+puma (5.1.1) lib/puma/configuration.rb:246:in `call'
+puma (5.1.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.1.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.1.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.1.1) lib/puma/server.rb:431:in `process_client'
+puma (5.1.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (295.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (214.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20210109154349)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_bc582ddd02"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_books_on_name" ON "books" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109154349"]]
+  [1m[36mTRANSACTION (70.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateNotes (20210109155412)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer NOT NULL, "title" varchar NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_317dc639a3"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_notes_on_book_id" ON "notes" ("book_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_notes_on_title" ON "notes" ("title")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210109155412"]]
+  [1m[36mTRANSACTION (82.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20210112214116)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210112214116"]]
+  [1m[36mTRANSACTION (56.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-12 22:52:23.125194"], ["updated_at", "2021-01-12 22:52:23.125194"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2021-01-12 19:52:43 -0300
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for ::1 at 2021-01-12 19:52:48 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms | Allocations: 1720)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-01-12 19:52:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 6.5ms | Allocations: 617)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 2680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 8790)
+Completed 200 OK in 47ms (Views: 34.1ms | ActiveRecord: 0.7ms | Allocations: 15093)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-01-12 19:52:52 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 6.3ms | Allocations: 227)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 146)
+  Rendered /home/julian/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 5008)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.0ms | Allocations: 6268)
+
+
+Started POST "/users" for ::1 at 2021-01-12 19:53:00 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"juuliiger@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "juuliiger@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "juuliiger@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "juuliiger@gmail.com"], ["encrypted_password", "$2a$12$bNIz.KprDdTbKn89XaePC.Afxx4CFn.klrkOYGMOZigIX609gk/oW"], ["created_at", "2021-01-12 22:53:00.595732"], ["updated_at", "2021-01-12 22:53:00.595732"]]
+  [1m[36mTRANSACTION (73.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 347ms (ActiveRecord: 74.2ms | Allocations: 10708)
+
+
+Started GET "/" for ::1 at 2021-01-12 19:53:00 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3250)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5419)
+
+
