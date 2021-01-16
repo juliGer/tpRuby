@@ -17,10 +17,10 @@
       <tr>
         <td><%= note.book_id %></td>
         <td><%= note.title %></td>
-        <td><%= note.content %></td>
         <td><%= link_to 'Show', [@user,@book, note] %></td>
         <td><%= link_to 'Edit', edit_user_book_note_path(@user,@book, note) %></td>
         <td><%= link_to 'Destroy', [@user,@book, note], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Export', user_book_note_export_path(@user,@book, note) %></td>
       </tr>
     <% end %>
   </tbody>
