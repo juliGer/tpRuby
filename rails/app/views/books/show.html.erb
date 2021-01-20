@@ -1,14 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @book.user_id %>
-</p>
+<div style="font-size: 20px;" class="container text-center">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1>Show</h1>
+      <div class="card">
+        <div class="card-body">
+          <p style="font-size: 20px;">
+        <strong>User:</strong>
+        <%= @book.user_id %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_book_path(@book) %> |
-<%= link_to 'Back', user_books_path %>
+      <p style="font-size: 20px;">
+        <strong>Name:</strong>
+        <%= @book.name %>
+      </p>
+        </div>
+      </div>
+      <br>
+      <%= link_to 'Edit', edit_user_book_path(@book) ,class:'btn btn-secondary' %> 
+      <%= link_to 'Back', user_books_path ,class:'btn btn-danger' %>
+    </div>
+    <div class="col-md-2"> </div>
+  </div>
+</div>
