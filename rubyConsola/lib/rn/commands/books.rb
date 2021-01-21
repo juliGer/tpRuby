@@ -44,7 +44,7 @@ module RN
         ]
 
         def call(*)
-          list()
+          A.list()
         end
       end
 
@@ -61,7 +61,7 @@ module RN
         ]
 
         def call(old_name:, new_name:, **)
-          rename(old_name,new_name)
+          A.rename(old_name,new_name)
         end
       end
     end
