@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_214116) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_notes_on_book_id"
-    t.index ["title"], name: "index_notes_on_title", unique: true
+    t.index ["title", "book_id"], name: "index_notes_on_title_and_book_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
