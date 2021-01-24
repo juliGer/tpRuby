@@ -1,1 +1,5 @@
-<%= markdown(@note.content) %>
+<% if !@note.contenthtml.blank? %>
+  <%= markdown(@note.contenthtml) %>
+<% else %>
+  <%= markdown(@note.content) %>
+<% end %>

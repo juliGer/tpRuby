@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index' 
     resources :users do
         resources :books do
+            get 'export_all_notes'
             resources :notes do 
               get 'export'
             end

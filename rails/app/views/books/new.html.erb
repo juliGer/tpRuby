@@ -1,5 +1,11 @@
-<h1>New Book</h1>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1>New Book</h1>
+        <%= render 'form', book: @book %>
+    </div>
+    <div class="col-md-4">  </div>
 
-<%= render 'form', book: @book %>
-
-<%= link_to 'Back', user_books_path %>
+  </div>
+</div>

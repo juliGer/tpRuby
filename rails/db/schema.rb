@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_214116) do
     t.integer "book_id", null: false
     t.string "title", null: false
     t.text "content"
+    t.string "contenthtml"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_notes_on_book_id"
