@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   root 'home#index' 
     resources :users do
+        get 'export_all'
         resources :books do
             get 'export_all_notes'
             resources :notes do 
