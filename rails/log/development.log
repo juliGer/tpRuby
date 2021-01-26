@@ -20909,3 +20909,329 @@ Processing by UsersController#export_all as HTML
 Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 1.3ms | Allocations: 14386)
 
 
+Started GET "/" for ::1 at 2021-01-26 11:33:10 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 471.3ms | Allocations: 7651)
+Completed 200 OK in 490ms (Views: 475.9ms | ActiveRecord: 0.0ms | Allocations: 10345)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-01-26 11:33:14 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 7.3ms | Allocations: 626)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 37.5ms | Allocations: 2398)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 5750)
+Completed 200 OK in 58ms (Views: 45.3ms | ActiveRecord: 1.0ms | Allocations: 11338)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-01-26 11:33:20 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (16.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 290ms (ActiveRecord: 16.3ms | Allocations: 4193)
+
+
+Started GET "/" for ::1 at 2021-01-26 11:33:21 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4269)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 4659)
+
+
+Started GET "/users/1/books" for ::1 at 2021-01-26 11:33:32 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:57:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (13.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/books/index.html.erb:19
+  Rendered books/index.html.erb within layouts/application (Duration: 41.1ms | Allocations: 5543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 8749)
+Completed 200 OK in 86ms (Views: 33.3ms | ActiveRecord: 14.0ms | Allocations: 13384)
+
+
+Started GET "/users/1/export_all" for ::1 at 2021-01-26 11:33:35 -0300
+Processing by UsersController#export_all as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/export_all.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/export_all.html.erb:17
+  [1m[36mNote Load (10.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/users/export_all.html.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "prueba"], ["id", 2], ["book_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/users/export_all.html.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "nota prueba"], ["id", 1], ["book_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  Rendered users/export_all.html.erb within layouts/application (Duration: 47.0ms | Allocations: 13509)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.6ms | Allocations: 17588)
+Completed 200 OK in 67ms (Views: 46.7ms | ActiveRecord: 14.6ms | Allocations: 19893)
+
+
+Started GET "/users/1/books/1/export_all_notes" for ::1 at 2021-01-26 11:35:55 -0300
+Processing by BooksController#export_all_notes as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:57:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book_export'
+  Rendering layout layouts/application.html.erb
+  Rendering books/export_all_notes.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/export_all_notes.erb:17
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/books/export_all_notes.erb:18
+  [1m[36mNote Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "prueba"], ["id", 2], ["book_id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/export_all_notes.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/books/export_all_notes.erb:18
+  Rendered books/export_all_notes.erb within layouts/application (Duration: 11.0ms | Allocations: 3849)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 7165)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 0.8ms | Allocations: 9926)
+
+
+Started GET "/users/1/books/1/notes/2/export" for ::1 at 2021-01-26 11:35:57 -0300
+Processing by NotesController#export as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "note_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:57:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_book'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:70:in `set_note_export'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/export.html.erb within layouts/application
+  Rendered notes/export.html.erb within layouts/application (Duration: 125.8ms | Allocations: 192)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 136.2ms | Allocations: 4347)
+Completed 200 OK in 144ms (Views: 137.2ms | ActiveRecord: 0.5ms | Allocations: 7478)
+
+
+Started GET "/users/1/books/1/export_all_notes" for ::1 at 2021-01-26 11:38:42 -0300
+Processing by BooksController#export_all_notes as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:57:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ? AND "books"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book_export'
+  Rendering layout layouts/application.html.erb
+  Rendering books/export_all_notes.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/export_all_notes.erb:17
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/books/export_all_notes.erb:18
+  [1m[36mNote Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "prueba"], ["id", 2], ["book_id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/export_all_notes.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/books/export_all_notes.erb:18
+  Rendered books/export_all_notes.erb within layouts/application (Duration: 14.9ms | Allocations: 3631)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 6960)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 1.9ms | Allocations: 8970)
+
+
+Started GET "/users/1/books/1/notes/2/export" for ::1 at 2021-01-26 11:38:43 -0300
+Processing by NotesController#export as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "note_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:57:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_book'
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:70:in `set_note_export'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/export.html.erb within layouts/application
+  Rendered notes/export.html.erb within layouts/application (Duration: 0.2ms | Allocations: 62)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4225)
+Completed 200 OK in 29ms (Views: 18.5ms | ActiveRecord: 1.0ms | Allocations: 6554)
+
+
+Started GET "/users/1/export_all" for ::1 at 2021-01-26 11:39:26 -0300
+Processing by UsersController#export_all as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/export_all.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/export_all.html.erb:17
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/users/export_all.html.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "prueba"], ["id", 2], ["book_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  Rendered users/export_all.html.erb within layouts/application (Duration: 22.8ms | Allocations: 5855)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 5919)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.1ms | Allocations: 7664)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"export", :controller=>"notes", :user_id=>#<Note id: 2, book_id: 1, title: "prueba", content: "#prueba", contenthtml: "<h1>prueba</h1>\n", created_at: "2021-01-24 21:45:30.226001000 +0000", updated_at: "2021-01-24 21:49:00.046129000 +0000">}, missing required keys: [:book_id, :note_id]
+Did you mean?  user_book_note_export_url):
+    20:                 <tr>
+    21:                     <td><%= note.book_id %></td>
+    22:                     <td><%= note.title %></td>
+    23:                     <td><%= link_to 'Show', user_book_note_export_path(note) %></td>
+    24:                 </tr>
+    25:             <% end %>
+    26:         <% end %>
+  
+app/views/users/export_all.html.erb:23
+app/views/users/export_all.html.erb:18
+app/views/users/export_all.html.erb:17
+Started GET "/users/1/export_all" for ::1 at 2021-01-26 11:39:52 -0300
+Processing by UsersController#export_all as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/export_all.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/export_all.html.erb:17
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/users/export_all.html.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "prueba"], ["id", 2], ["book_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:23
+  Rendered users/export_all.html.erb within layouts/application (Duration: 18.4ms | Allocations: 7100)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7164)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms | Allocations: 9073)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"export", :book_id=>#<Note id: 2, book_id: 1, title: "prueba", content: "#prueba", contenthtml: "<h1>prueba</h1>\n", created_at: "2021-01-24 21:45:30.226001000 +0000", updated_at: "2021-01-24 21:49:00.046129000 +0000">, :controller=>"notes", :user_id=>#<User id: 1, email: "a@gmail.com", created_at: "2021-01-24 21:25:00.926409000 +0000", updated_at: "2021-01-24 21:25:00.926409000 +0000">}, missing required keys: [:note_id]
+Did you mean?  user_book_note_export_url):
+    20:                 <tr>
+    21:                     <td><%= note.book_id %></td>
+    22:                     <td><%= note.title %></td>
+    23:                     <td><%= link_to 'Show', user_book_note_export_path(current_user,note) %></td>
+    24:                 </tr>
+    25:             <% end %>
+    26:         <% end %>
+  
+app/views/users/export_all.html.erb:23
+app/views/users/export_all.html.erb:18
+app/views/users/export_all.html.erb:17
+Started GET "/users/1/export_all" for ::1 at 2021-01-26 11:40:56 -0300
+Processing by UsersController#export_all as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/export_all.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/export_all.html.erb:17
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/users/export_all.html.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "prueba"], ["id", 2], ["book_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/users/export_all.html.erb:18
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mNote Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "notes" WHERE "notes"."title" = ? AND "notes"."id" != ? AND "notes"."book_id" = ? LIMIT ?[0m  [["title", "nota prueba"], ["id", 1], ["book_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/export_all.html.erb:19
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/views/users/export_all.html.erb:19
+  Rendered users/export_all.html.erb within layouts/application (Duration: 26.0ms | Allocations: 8182)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 12833)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 1.5ms | Allocations: 14610)
+
+
+Started GET "/users/1/books/1/notes/2/export" for ::1 at 2021-01-26 11:40:59 -0300
+Processing by NotesController#export as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"1", "note_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:57:in `set_user'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_book'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:70:in `set_note_export'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/export.html.erb within layouts/application
+  Rendered notes/export.html.erb within layouts/application (Duration: 1.0ms | Allocations: 189)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4386)
+Completed 200 OK in 26ms (Views: 12.2ms | ActiveRecord: 0.7ms | Allocations: 7895)
+
+
+Started GET "/users/1/books/2/notes/1/export" for ::1 at 2021-01-26 11:41:01 -0300
+Processing by NotesController#export as HTML
+  Parameters: {"user_id"=>"1", "book_id"=>"2", "note_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:57:in `set_user'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:61:in `set_book'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."book_id" = ? AND "notes"."id" = ? LIMIT ?[0m  [["book_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:70:in `set_note_export'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/export.html.erb within layouts/application
+  Rendered notes/export.html.erb within layouts/application (Duration: 0.1ms | Allocations: 62)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4225)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 7158)
+
+

@@ -20,7 +20,7 @@
                 <tr>
                     <td><%= note.book_id %></td>
                     <td><%= note.title %></td>
-                    <td><%= note.contenthtml %> </td>
+                    <td><%= link_to 'Show', user_book_note_export_path(@user,book,note) %></td>
                 </tr>
             <% end %>
         <% end %>
