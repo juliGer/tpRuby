@@ -21,9 +21,17 @@
   <%= form.text_field :name , class:'form-control' %>
 </div>
 
-<div class="actions">
-  <%= form.submit :submit , class: 'btn btn-lg btn-primary btn-block'%>
-  <%= link_to 'Back', user_books_path , class:'btn btn-danger'%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3 text-center">
+      <%= form.submit :Submit , class: 'btn btn-primary'%>
+    </div>
+    <div class="col-md-3 text-center">
+      <%= link_to 'Back', user_books_path , class:'btn btn-danger'%>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
 <% end %>
 </div>

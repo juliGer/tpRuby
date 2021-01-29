@@ -21,11 +21,7 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-            <% if !user_signed_in? %>
-                <li class="nav-item">
-                    <%= link_to "Sign In", new_user_session_path, method: :create, class:'btn btn-dark' %>
-                </li>
-            <% else %>
+            <% if user_signed_in? %>
                 <li class="nav-item">
                     <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'btn btn-dark' %>
                 </li>

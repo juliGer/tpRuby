@@ -8,24 +8,24 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th  style="font-size: 20px;" scope="col">User</th>
-      <th  style="font-size: 20px;" scope="col">Name</th>
-      <th  style="font-size: 20px;" scope="col">Show</th>
-      <th  style="font-size: 20px;" scope="col">Edit</th>
-      <th  style="font-size: 20px;" scope="col">Destroy</th>
+      <th scope="col">User</th>
+      <th scope="col">Name</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Destroy</th>
+      <th scope="col">Export All</th>
     </tr>
   </thead>
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td style="font-size: 20px;"><%= book.user_id %></td>
-        <td style="font-size: 20px;"><%= book.name %></td>
+        <td><%= book.user_id %></td>
+        <td><%= book.name %></td>
+        <td><%= link_to 'Show', user_book_notes_path(@user,book) , class:'btn btn-info'%></td>
         <% if book.name != "cuaderno_global" %>
-          <td><%= link_to 'Show', [@user, book] , class:'btn btn-info'%></td>
           <td><%= link_to 'Edit', edit_user_book_path(@user, book),class:'btn btn-secondary' %></td>
           <td><%= link_to 'Destroy', [@user, book],class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% else %>
-          <td><%= link_to 'Show', [@user, book] , class:'btn btn-info disabled'%></td>
           <td><%= link_to 'Edit', edit_user_book_path(@user, book),class:'btn btn-secondary disabled' %></td>
           <td><%= link_to 'Destroy', [@user, book],class:'btn btn-danger disabled', method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -34,7 +34,7 @@
     </tr>
   </tbody>
 </table>
-    <%= link_to 'Export All', user_export_all_path(@user),class:'btn btn-primary' %>
+    <%= link_to 'Export All Books', user_export_all_path(@user),class:'btn btn-primary' %>
     <%= link_to 'New Book', new_user_book_path(@user),class:'btn btn-primary' %>
     </div>
     <div class="col-md-2">
