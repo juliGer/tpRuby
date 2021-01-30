@@ -13,20 +13,30 @@
 
   <div class="field">
     <%= form.label :book_id %>
-    <%= form.text_field :book_id %>
+    <%= form.text_field :book_id , class:'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title , class:'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content , class:'form-control'%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3 text-center">
+      <%= form.submit :Submit , class: 'btn btn-primary'%>
+    </div>
+    <div class="col-md-3 text-center">
+      <%= link_to 'Back', user_book_notes_path , class:'btn btn-danger'%>
+    </div>
+    <div class="col-md-3"></div>
   </div>
+</div>
 <% end %>

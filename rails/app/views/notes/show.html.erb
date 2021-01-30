@@ -1,19 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Book:</strong>
-  <%= @note.book_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <h1>Show</h1>
+      <div class="card">
+        <div class="card-body">
+          <p>
+            <strong>Book:</strong>
+            <%= @note.book_id %>
+          </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
+          <p>
+            <strong>Title:</strong>
+            <%= @note.title %>
+          </p>
 
-<%= link_to 'Edit', edit_user_book_note_path(@user,@book,@note) %> |
-<%= link_to 'Back', user_book_notes_path %>
+          <p>
+            <strong>Content:</strong>
+            <%= @note.content %>
+          </p>
+
+          <%= link_to 'Edit', edit_user_book_note_path(@user,@book,@note) , class:"btn btn-secondary" %> 
+          <%= link_to 'Back', user_book_notes_path , class:"btn btn-danger"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

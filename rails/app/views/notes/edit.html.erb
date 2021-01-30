@@ -1,6 +1,11 @@
-<h1>Editing Note</h1>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1>Editing Note</h1>
 
-<%= render 'form', note: @note %>
-
-<%= link_to 'Show', [@user,@book,@note] %> |
-<%= link_to 'Back', user_book_notes_path %>
+        <%= render 'form', note: @note %>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
