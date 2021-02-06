@@ -13,7 +13,7 @@
 2. Go to the rails directory
 3. Run `bundle install` to get all the required gems
 4. Run `yarn`
-4. Run `createDatabase.sh` to create database an load seed
+4. Run `createDatabase.sh` to create database an load seed
 5. Run `./bin/webpack` to load styles
 6. Run `rails s` to start the web server
 7. Go to http://localhost:3000/
