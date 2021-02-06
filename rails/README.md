@@ -6,6 +6,7 @@
 1. ruby ≥ 2.7.1
 2. rails ≥ 6.1.1
 3. bundler gem
+4. require yarn
 
 ## How to run 
 
