@@ -10,7 +10,7 @@
 #     Book.create name: "Global Book", user: u
 # }
 
-10.times do |i|
+15.times do |i|
     u = User.create! :email => "user#{i}@gmail.com" , :password => '123123', :password_confirmation => '123123'
     global = u.books.create(user_id: u.id,name:"cuaderno_global")
     global.notes.create(book_id: global.id , title: "prueba md" , content: "# Entrega 1
@@ -52,9 +52,9 @@
         
         [fuente](https://github.com/piotrmurach/tty-editor)")
 
-    10.times do |j|
+    5.times do |j|
         book = u.books.create(user_id: u.id,name:"book#{j}")
-        10.times do |k|
+        5.times do |k|
             book.notes.create(book_id: book.id , title: "titulo #{k}" , content: "# README
 
                 This README would normally document whatever steps are necessary to get the
