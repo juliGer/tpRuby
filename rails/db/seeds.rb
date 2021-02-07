@@ -10,7 +10,7 @@
 #     Book.create name: "Global Book", user: u
 # }
 
-15.times do |i|
+3.times do |i|
     u = User.create! :email => "user#{i}@gmail.com" , :password => '123123', :password_confirmation => '123123'
     global = u.books.create(user_id: u.id,name:"cuaderno_global")
     global.notes.create(book_id: global.id , title: "prueba md" , content: "# Entrega 1
